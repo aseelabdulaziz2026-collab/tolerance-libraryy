@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f4e9">
+<title>مساحة تسامح | مكتبة رقمية</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap');
+:root{
+ --green:#557866;--green2:#789783;--mint:#e7efe7;--cream:#f7f4e9;
+ --yellow:#f4dfa0;--pink:#f3dce0;--blue:#dceaf0;--ink:#34453d;
+ --muted:#758078;--white:#fffefa;--line:#e9e7dc;--shadow:0 14px 40px rgba(61,83,68,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Alexandria',Tahoma,sans-serif;line-height:1.9}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(247,244,233,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(85,120,102,.12)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--green);font-size:1.12rem}
+.brand-mark{width:38px;height:38px;border-radius:14px;background:var(--green);color:white;display:grid;place-items:center;font-size:20px}
+nav{display:flex;gap:20px;align-items:center;font-size:.82rem;color:#65736a}
+nav a:hover{color:var(--green)}
+.menu-btn{display:none;border:0;background:var(--mint);color:var(--green);padding:8px 12px;border-radius:12px}
+.hero{padding:62px 0 54px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:38px}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#e8eee4;color:var(--green);padding:7px 14px;border-radius:30px;font-size:.78rem;font-weight:600}
+h1{font-size:clamp(2.2rem,5vw,4.1rem);line-height:1.35;margin:20px 0 14px;letter-spacing:-1.8px}
+h1 span{color:var(--green);position:relative}
+.hero p{color:var(--muted);max-width:560px;font-size:.98rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{border:0;border-radius:14px;padding:12px 20px;font-size:.86rem;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:.2s}
+.btn:hover{transform:translateY(-3px)}
+.primary{background:var(--green);color:white;box-shadow:0 8px 18px #55786630}
+.secondary{background:white;color:var(--green);border:1px solid var(--line)}
+.hero-art{min-height:360px;position:relative;display:grid;place-items:center}
+.art-card{width:min(410px,100%);aspect-ratio:1.08;background:#e7eee4;border-radius:46% 54% 58% 42% / 46% 42% 58% 54%;position:relative;display:grid;place-items:center;overflow:hidden}
+.art-card:before,.art-card:after{content:"";position:absolute;border-radius:50%;background:#f4dfa0}
+.art-card:before{width:110px;height:110px;top:28px;right:35px;opacity:.85}
+.art-card:after{width:75px;height:75px;bottom:35px;left:35px;background:#f0cfd7}
+.hands{position:relative;z-index:2;font-size:116px;filter:drop-shadow(0 12px 10px #536e5930)}
+.float-note{position:absolute;background:white;padding:12px 16px;border-radius:16px;box-shadow:var(--shadow);font-size:.78rem;font-weight:600}
+.note-one{top:34px;left:0;transform:rotate(-5deg)}.note-two{bottom:30px;right:0;transform:rotate(4deg)}
+.spark{position:absolute;color:#d5ad4d;font-size:28px}.s1{top:15px;left:45%}.s2{bottom:30px;right:15%}
+section{padding:58px 0}
+.section-head{text-align:center;max-width:650px;margin:0 auto 32px}
+.kicker{color:var(--green);font-size:.76rem;font-weight:700;letter-spacing:.4px}
+h2{font-size:clamp(1.55rem,3vw,2.25rem);margin:8px 0;color:#3f5949}
+.section-head p{color:var(--muted);font-size:.9rem;margin:0}
+.intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:27px;box-shadow:var(--shadow)}
+.panel h3{margin:0 0 10px;font-size:1.12rem;color:var(--green)}
+.panel p{margin:0;color:var(--muted);font-size:.88rem}
+.fact{background:var(--yellow);border-radius:24px;padding:26px;display:flex;flex-direction:column;justify-content:center}
+.fact strong{font-size:2.4rem;color:#76602b;line-height:1.4}
+.fact span{font-size:.85rem;color:#776944}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.info-card{background:var(--white);padding:23px;border-radius:22px;border:1px solid var(--line);transition:.22s}
+.info-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.icon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;font-size:23px;margin-bottom:15px}
+.i-green{background:var(--mint)}.i-pink{background:var(--pink)}.i-blue{background:var(--blue)}.i-yellow{background:#fbf0ce}
+.info-card h3{margin:0 0 7px;font-size:1rem}.info-card p{margin:0;color:var(--muted);font-size:.82rem}
+.soft{background:#eef1e9}
+.types-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.type{padding:22px 18px;border-radius:20px;background:white;border:1px solid #e5e9df}
+.type b{display:block;color:var(--green);margin-bottom:7px}.type p{margin:0;color:var(--muted);font-size:.8rem}
+.quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.quote{padding:23px 25px;border-radius:22px;background:white;border:1px solid var(--line);position:relative}
+.quote:before{content:"“";position:absolute;left:18px;top:0;font:4rem Georgia;color:#d5dfd3}
+.quote p{font-family:'Amiri',serif;font-size:1.35rem;line-height:1.8;margin:0 0 8px;color:#405b49}
+.quote small{color:var(--muted);font-size:.76rem}
+.hadith{background:#f8f0d9}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.poster{min-height:230px;border-radius:24px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+.poster .emoji{font-size:52px;align-self:flex-start}
+.poster h3{font-size:1.1rem;max-width:220px;margin:0;line-height:1.7}
+.poster small{font-size:.72rem;opacity:.75}
+.poster.green{background:#dfeae0}.poster.pink{background:#f3dfe2}.poster.blue{background:#dceaf0}
+.poster.yellow{background:#f5e8bf}.poster.cream{background:#eee9dc}.poster.lilac{background:#e8e3ef}
+.poster:after{content:"";position:absolute;width:140px;height:140px;border:1px solid currentColor;border-radius:50%;opacity:.12;left:-30px;top:-30px}
+.steps{counter-reset:step;display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.step{background:white;border:1px solid var(--line);border-radius:20px;padding:22px}
+.step:before{counter-increment:step;content:counter(step,decimal-leading-zero);display:block;color:#a58a4c;font-weight:800;font-size:1.2rem;margin-bottom:8px}
+.step h3{font-size:.95rem;margin:0 0 6px}.step p{font-size:.8rem;color:var(--muted);margin:0}
+.message{background:var(--green);color:white;border-radius:28px;padding:34px;text-align:center}
+.message h2{color:white}.message p{max-width:720px;margin:10px auto 0;color:#e7eee8;font-size:.9rem}
+.search-row{display:flex;gap:10px;max-width:520px;margin:0 auto 22px}
+.search-row input{flex:1;min-width:0;border:1px solid var(--line);border-radius:14px;padding:12px 15px;background:white;font:inherit;outline:none}
+.search-row input:focus{border-color:var(--green)}
+.phrase-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.phrase{background:white;border:1px solid var(--line);padding:16px 18px;border-radius:16px;font-size:.86rem}
+.copy{float:left;border:0;background:var(--mint);color:var(--green);padding:5px 10px;border-radius:9px;font-size:.7rem}
+footer{padding:34px 0 24px;text-align:center;color:var(--muted);font-size:.78rem}
+footer strong{color:var(--green)}
+.credit{margin-top:12px;padding-top:13px;border-top:1px solid var(--line)}
+.backtop{position:fixed;bottom:18px;left:18px;width:44px;height:44px;border:0;border-radius:15px;background:var(--green);color:white;box-shadow:var(--shadow);display:none}
+.backtop.show{display:block}
+@media(max-width:850px){nav{display:none;position:absolute;top:76px;right:4%;left:4%;background:white;padding:18px;border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}nav.open{display:flex}.menu-btn{display:block}.hero-grid,.intro-grid{grid-template-columns:1fr}.hero-art{min-height:300px}.cards{grid-template-columns:repeat(2,1fr)}.types-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.hero{padding-top:40px}.hero-art{min-height:260px}.hands{font-size:88px}.art-card{width:290px}.float-note{font-size:.68rem}.cards,.gallery,.steps,.quote-grid,.phrase-list{grid-template-columns:1fr}.types-grid{grid-template-columns:1fr 1fr}section{padding:43px 0}.panel{padding:22px}.poster{min-height:190px}.search-row{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#home"><span class="brand-mark">♡</span> مساحة تسامح</a>
+  <nav id="navLinks">
+   <a href="#about">عن التسامح</a><a href="#types">أنواعه</a><a href="#values">قيمه</a>
+   <a href="#quran">آيات وأحاديث</a><a href="#gallery">معرض الصور</a><a href="#phrases">عبارات</a>
+  </nav>
+  <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+ </div>
+</header>
+<main>
+<section class="hero" id="home">
+ <div class="wrap hero-grid">
+  <div>
+   <span class="eyebrow">١٦ نوفمبر · اليوم العالمي للتسامح</span>
+   <h1>قلوبٌ تتسع للجميع،<br><span>وعالمٌ أجمل بالتسامح.</span></h1>
+   <p>مساحة رقمية نكتشف فيها معنى التسامح، ونتأمل أثره في حياتنا، ونتعلم كيف نجعل الاحترام والرحمة بدايةً لعلاقات أكثر سلامًا.</p>
+   <div class="actions"><a class="btn primary" href="#about">ابدئي الرحلة <span>←</span></a><a class="btn secondary" href="#quran">اقرئي من المكتبة</a></div>
+  </div>
+  <div class="hero-art" aria-label="رسم تعبيري عن المصافحة والتسامح">
+   <span class="spark s1">✦</span><span class="spark s2">✧</span>
+   <div class="art-card"><div class="hands">🤝</div></div>
+   <div class="float-note note-one">الاختلاف لا يمنع الاحترام</div><div class="float-note note-two">التسامح قوة ووعي</div>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">01 — البداية</span><h2>ما حكاية هذا اليوم؟</h2><p>نتعرف على المناسبة التي تذكر العالم بقيمة قبول الآخر.</p></div>
+  <div class="intro-grid">
+   <article class="panel"><h3>اليوم العالمي للتسامح</h3><p>يُحتفى باليوم العالمي للتسامح في 16 نوفمبر من كل عام. وقد أعلنت الأمم المتحدة هذا اليوم عام 1996، بعد اعتماد إعلان مبادئ التسامح من منظمة اليونسكو عام 1995. ويهدف إلى تعزيز التفاهم والاحترام وقبول التنوع بين البشر، ونبذ التعصب والتمييز.</p></article>
+   <aside class="fact"><strong>16 نوفمبر</strong><span>موعد سنوي للتذكير بأن احترام الاختلاف أساس التعايش السلمي.</span></aside>
+  </div>
+ </div>
+</section>
+
+<section class="soft" id="meaning">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">02 — المعنى</span><h2>ما هو التسامح؟</h2><p>التسامح ليس ضعفًا، بل وعيٌ يجعلنا نختار التعامل باحترام.</p></div>
+  <div class="panel"><p>التسامح هو احترام اختلاف الآخرين في أفكارهم وثقافاتهم وطباعهم، والتعامل معهم بعدل وتفهّم دون تعصب أو إساءة. ويشمل القدرة على تجاوز الأخطاء عندما يكون ذلك مناسبًا، مع المحافظة على الحقوق والحدود الشخصية. فالتسامح لا يعني قبول الظلم أو التنازل عن الكرامة.</p></div>
+ </div>
+</section>
+
+<section id="types">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">03 — أشكال التسامح</span><h2>للتسامح أكثر من وجه</h2><p>نمارسه في البيت والمدرسة والمجتمع، ومع أنفسنا أيضًا.</p></div>
+  <div class="types-grid">
+   <div class="type"><b>التسامح الديني</b><p>احترام معتقدات الآخرين وحقهم في ممارسة شعائرهم دون إكراه أو إساءة.</p></div>
+   <div class="type"><b>التسامح الثقافي</b><p>تقدير تنوع العادات واللغات والثقافات والتعلم منها.</p></div>
+   <div class="type"><b>التسامح الاجتماعي</b><p>التعامل مع الناس باحترام رغم اختلاف آرائهم وطباعهم.</p></div>
+   <div class="type"><b>التسامح الفكري</b><p>الاستماع إلى الآراء المختلفة ومناقشتها بهدوء ودليل.</p></div>
+   <div class="type"><b>التسامح الأسري</b><p>حل الخلافات داخل الأسرة بالحوار والتفاهم والاعتذار.</p></div>
+   <div class="type"><b>التسامح المدرسي</b><p>تقبّل الزميلات، وعدم السخرية أو الإقصاء أو التنمر.</p></div>
+   <div class="type"><b>التسامح مع الذات</b><p>التعلم من الأخطاء وعدم القسوة على النفس، مع تحمّل المسؤولية.</p></div>
+   <div class="type"><b>التسامح الرقمي</b><p>احترام الآخرين في الإنترنت وتجنب الإساءة ونشر الشائعات.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="soft" id="values">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">04 — أثره</span><h2>لماذا نحتاج إلى التسامح؟</h2><p>لأنه يحوّل الاختلاف من سبب للخلاف إلى فرصة للفهم.</p></div>
+  <div class="cards">
+   <article class="info-card"><div class="icon i-green">🕊️</div><h3>نشر السلام</h3><p>يساعد على تقليل النزاعات وبناء بيئة يسودها الهدوء والأمان.</p></article>
+   <article class="info-card"><div class="icon i-pink">💗</div><h3>تقوية العلاقات</h3><p>يعزز الثقة والمودة ويمنح العلاقات فرصة للاستمرار والنمو.</p></article>
+   <article class="info-card"><div class="icon i-blue">🌍</div><h3>قبول التنوع</h3><p>يجعل المجتمع أكثر قدرة على التعايش رغم اختلاف أفراده.</p></article>
+   <article class="info-card"><div class="icon i-yellow">🧠</div><h3>نضج التفكير</h3><p>يدرّبنا على الاستماع والتروي قبل إصدار الأحكام.</p></article>
+   <article class="info-card"><div class="icon i-blue">🤝</div><h3>التعاون</h3><p>يفتح المجال للعمل المشترك وتحقيق أهداف نافعة للجميع.</p></article>
+   <article class="info-card"><div class="icon i-green">🌱</div><h3>النمو الشخصي</h3><p>يساعدنا على التعلم من المواقف والتعامل معها بحكمة.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="quran">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">05 — نور وهداية</span><h2>التسامح في القرآن والسنة</h2><p>توجيهات عظيمة تدعونا إلى العفو والإحسان والرفق.</p></div>
+  <div class="quote-grid">
+   <article class="quote"><p>﴿وَلْيَعْفُوا وَلْيَصْفَحُوا ۗ أَلَا تُحِبُّونَ أَنْ يَغْفِرَ اللَّهُ لَكُمْ﴾</p><small>سورة النور، الآية 22</small></article>
+   <article class="quote"><p>﴿وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ ۗ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ﴾</p><small>سورة آل عمران، الآية 134</small></article>
+   <article class="quote"><p>﴿ادْفَعْ بِالَّتِي هِيَ أَحْسَنُ فَإِذَا الَّذِي بَيْنَكَ وَبَيْنَهُ عَدَاوَةٌ كَأَنَّهُ وَلِيٌّ حَمِيمٌ﴾</p><small>سورة فصلت، الآية 34</small></article>
+   <article class="quote hadith"><p>«وما زاد الله عبدًا بعفوٍ إلا عزًّا»</p><small>حديث نبوي — رواه مسلم</small></article>
+  </div>
+ </div>
+</section>
+
+<section class="soft" id="gallery">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">06 — معرض بصري</span><h2>صور تحكي معنى التسامح</h2><p>رموز بسيطة تذكّرنا بأن اللطف والاحترام يصنعان فرقًا.</p></div>
+  <div class="gallery">
+   <article class="poster green"><span class="emoji">🤝</span><h3>يدٌ تمتد بالسلام، لا بالخلاف.</h3><small>التعاون يبدأ بخطوة</small></article>
+   <article class="poster pink"><span class="emoji">🌷</span><h3>الكلمة الطيبة تترك أثرًا جميلًا.</h3><small>اختر كلماتك بعناية</small></article>
+   <article class="poster blue"><span class="emoji">🌈</span><h3>اختلاف ألواننا يزيد الحياة جمالًا.</h3><small>التنوع ثراء</small></article>
+   <article class="poster yellow"><span class="emoji">🕊️</span><h3>العفو شجاعة، والاحترام أساس.</h3><small>قوة بلا أذى</small></article>
+   <article class="poster cream"><span class="emoji">🌿</span><h3>ازرع تفهّمًا، تحصد مودة.</h3><small>ابدأ بنفسك</small></article>
+   <article class="poster lilac"><span class="emoji">💬</span><h3>نختلف في الرأي، ونتفق على الاحترام.</h3><small>حوار بلا تجريح</small></article>
+  </div>
+ </div>
+</section>
+
+<section id="practice">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">07 — في حياتنا</span><h2>كيف نكون أكثر تسامحًا؟</h2><p>أفعال صغيرة يمكن أن تصنع أثرًا كبيرًا.</p></div>
+  <div class="steps">
+   <article class="step"><h3>استمع قبل أن تحكم</h3><p>امنح الطرف الآخر فرصة لشرح وجهة نظره دون مقاطعة.</p></article>
+   <article class="step"><h3>اختر كلماتك</h3><p>ناقش الفكرة بهدوء، وابتعد عن السخرية والإهانة.</p></article>
+   <article class="step"><h3>اعتذر عند الخطأ</h3><p>الاعتذار الصادق دليل مسؤولية واحترام.</p></article>
+   <article class="step"><h3>تقبّل الاختلاف</h3><p>ليس من الضروري أن يتفق الجميع معنا في كل شيء.</p></article>
+   <article class="step"><h3>لا ترد الإساءة بمثلها</h3><p>حافظ على هدوئك، واختر طريقة مناسبة لحل المشكلة.</p></article>
+   <article class="step"><h3>ضع حدودًا واضحة</h3><p>سامح عندما تستطيع، واطلب المساعدة إذا استمر الأذى.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="soft" id="phrases">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">08 — كلمات تبقى</span><h2>عبارات عن التسامح</h2><p>يمكنك نسخ العبارة التي تعجبك ومشاركتها.</p></div>
+  <div class="search-row"><input id="phraseSearch" type="search" placeholder="ابحثي عن عبارة..."></div>
+  <div class="phrase-list" id="phraseList">
+   <div class="phrase">التسامح لا يغيّر الماضي، لكنه يمنح المستقبل فرصة أجمل.</div>
+   <div class="phrase">الاختلاف لا يفسد الاحترام.</div>
+   <div class="phrase">كن لطيفًا؛ فكل إنسان يخوض معركته الخاصة.</div>
+   <div class="phrase">العفو قوة يملكها من يعرف قيمة السلام.</div>
+   <div class="phrase">ليس شرطًا أن نتشابه حتى نتعايش.</div>
+   <div class="phrase">الكلمة الطيبة جسرٌ تعبر به القلوب.</div>
+   <div class="phrase">التسامح أن نختلف دون أن نتخاصم.</div>
+   <div class="phrase">احترامك للآخر لا ينتقص من قناعاتك.</div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="message"><span>رسالة المكتبة</span><h2>لنجعل التسامح أسلوب حياة</h2><p>قد لا نستطيع تغيير العالم كله، لكننا نستطيع أن نبدأ من كلماتنا وتصرفاتنا وطريقة تعاملنا مع من حولنا. فلنمنح الآخرين الاحترام الذي نحب أن نحصل عليه، ولنجعل اختلافنا مساحة للتعارف لا سببًا للعداء.</p></div>
+ </div>
+</section>
+</main>
+<footer>
+ <div class="wrap">
+  <strong>مساحة تسامح</strong> · مكتبة رقمية بمناسبة اليوم العالمي للتسامح
+  <div class="credit">إنشاء الطالبة: أسيل عبدالعزيز معشي<br>الصف: أول ثانوي 1<br>المدرسة: ثانوية زبارة رشيد للبنات</div>
+  <div style="margin-top:12px">صُممت هذه المكتبة لنشر الوعي بقيمة التسامح والاحترام.</div>
+ </div>
+</footer>
+<button class="backtop" id="backtop" aria-label="العودة للأعلى">↑</button>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const search=document.getElementById('phraseSearch');
+search.addEventListener('input',()=>{
+ const q=search.value.trim().toLowerCase();
+ document.querySelectorAll('#phraseList .phrase').forEach(el=>{
+  el.style.display=el.textContent.toLowerCase().includes(q)?'block':'none';
+ });
+});
+const topBtn=document.getElementById('backtop');
+window.addEventListener('scroll',()=>topBtn.classList.toggle('show',window.scrollY>500));
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
